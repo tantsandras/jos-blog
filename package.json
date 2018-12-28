@@ -1,0 +1,29 @@
+{
+  "name": "jos-blog",
+  "version": "1.0.0",
+  "description": "jos-blog",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "env2": "^2.2.2",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "nodemon": "^1.18.9",
+    "pg": "^7.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tantsandras/jos-blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tantsandras/jos-blog/issues"
+  },
+  "homepage": "https://github.com/tantsandras/jos-blog#readme"
+}
