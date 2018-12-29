@@ -3,6 +3,21 @@
         <h1>Rarely Jovial</h1>
         <h2>So-called grown up trying to make her way through life with depression and anxiety</h2>
 
-        
+    </section>
+    
+    <section id="bloggy">
+
+    <i class="fas fa-arrow-circle-left"></i>
+        <ul class="blogpost-list">
+            {{#each blogposts}}
+            <li class="existing-blogpost">
+                <h3 class="header">{{header}}</h3>
+                <img src={{img_url}}></img>
+                <article class="text">{{text}}</article>
+            </li>
+            {{/each}}
+        </ul>
+        <i class="fas fa-arrow-circle-right"></i>
+
     </section>
 </main>

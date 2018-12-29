@@ -1,13 +1,13 @@
 <main class="page-content login">
-        <section id="form" title ="form">
+        <section id="login" title ="login">
         <form action='/userLogin' method='POST'>
 
-<ul class="form">
-            <h2>Login</h2>
 
-            <li><label for ="name-of-user">Name</label><input pattern="^[^<>]+$" name='userName' type='text' id="name-of-user" class ="field-long" placeholder="Type your name here" required/> </li>
-            <li><label for ="password">Password</label><input type="password" pattern="^[^<>]+$" name='password' id ="password" class ="field-long" placeholder="Enter your password here" required/> </li>
-            <li><input type="submit" id="login" value= "login"></li>
+            <h3>Login</h3>
+<ul class="form" id="login-form">
+            <label for ="name-of-user">Name</label><input pattern="^[^<>]+$" name='userName' type='text' id="name-of-user" class ="field-long" placeholder="Type your name here" required/> 
+            <label for ="password">Password</label><input type="password" pattern="^[^<>]+$" name='password' id ="password" class ="field-long" placeholder="Enter your password here" required/>
+            <button type="submit" class="button-submit">login</button>
           </ul>
         </form>
     </section>

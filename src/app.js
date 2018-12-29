@@ -35,9 +35,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.post("/write", (req, res) => {
-//   postData.postDataLanguages(
-//     req.body
-//   );
+postData.postDataBp(
+  req.body.header,
+  req.body.img_url,
+  req.body.text
+   );
   res.redirect("/write");
 });
 

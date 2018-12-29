@@ -5,10 +5,16 @@ const router = express.Router();
 
 // home route
 router.get("/", (req, res) => {
-  res.render("home"); // . 
+  getData.getBpData((err, bpData) => {
+    if (err) {
+      res.statusCode = 500;
+      res.send("Error");
+    }
+  res.render("home", {blogposts: bpData} ); 
+  });
 });
 
-// create profile route
+
 router.get("/write", (req, res) => {
   res.render("write"); 
 });
@@ -16,21 +22,6 @@ router.get("/write", (req, res) => {
 router.get("/login", (req, res) => {
     res.render("login"); 
   });
-  
-
-// // search profiles route
-// router.get("/search-profiles", (req, res) => {
-//   getData.getUserData((err, userData) => {
-//     if (err) {
-//       res.statusCode = 500;
-//       res.send("Error");
-//     }
-//     res.render("search-profiles", { users: userData } )
-//   })
-// })
-
-
-
 
 // error pages
 router.use(function(req, res, next){

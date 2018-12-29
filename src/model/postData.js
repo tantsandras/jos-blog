@@ -12,16 +12,12 @@ const hashPassword = (password, cb) => {
   };
 
 
-const postDataBp = (header, text, date, img_url, cb) => {
+const postDataBp = (header, img_url, text, date) => {
     databaseConnection.query(
-        'INSERT INTO blogposts (header, text, date, img_url) VALUES ($1, $2, $3, $4)',
-        [header, text, date, img_url],
-        (err, res) => {
-            if(err) {
-                return cb(err);
-            } else {
-                cb(null, res);
-            }
+        'INSERT INTO blogposts (header, img_url, text, date) VALUES ($1, $2, $3, $4)',
+        [header, img_url, text, date],
+        err => {
+            if(err) return (err);
         }
     );
 };
