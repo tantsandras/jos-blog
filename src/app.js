@@ -2,9 +2,8 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const path = require("path");
 const bodyParser = require("body-parser");
-// yet to write files
 const routes = require("./routes/routes");
-// const helpers = require("./views/helpers/index");
+const helpers = require("./views/helpers/index");
 const postData = require("./model/postData.js");
 
 const app = express();
@@ -18,7 +17,7 @@ app.engine(
     layoutsDir: path.join(__dirname, "views", "layouts"),
     partialsDir: path.join(__dirname, "views", "partials"),
     defaultLayout: "main",
-    // helpers: helpers
+    helpers: helpers
   })
 );
 
