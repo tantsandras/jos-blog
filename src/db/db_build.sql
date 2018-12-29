@@ -1,75 +1,41 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, languages CASCADE;
+DROP TABLE IF EXISTS users, blogposts, comments CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
-  bio TEXT NOT NULL
+  password VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE languages (
+CREATE TABLE blogposts (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  html INTEGER NOT NULL,
-  css INTEGER NOT NULL,
-  js INTEGER NOT NULL,
-  sql INTEGER NOT NULL,
-  node INTEGER NOT NULL
+  header TEXT NOT NULL,
+  text TEXT NOT NULL,
+  date INTEGER,
+  img_url VARCHAR(500)
+);
+
+CREATE TABLE comments (
+  id SERIAL PRIMARY KEY,
+  post_id INTEGER REFERENCES blogposts(id),
+  text TEXT NOT NULL
 );
 
 
-
-INSERT INTO users (name, bio) VALUES
+INSERT INTO users (name, password) VALUES
 (
-'Sandra',
-'Is a code ninja'
-),
-(
-'Jason',
-'Is a soon to be code ninja'
-),
-(
-'Martin',
-'Is the DOM god'
-),
-(
-'Mike',
-'Love bagels while coding'
+  'Jo', 
+  'password'
 );
 
-INSERT INTO languages (user_id, html, css, js, sql, node) VALUES
+
+INSERT INTO blogposts (header, text, date, img_url) VALUES
 (
-  (SELECT id FROM users WHERE name = 'Sandra'),
-  '4',
-  '3',
-  '3',
-  '4',
-  '2'
-),
-(
-  (SELECT id FROM users WHERE name = 'Jason'),
-  '3',
-  '3',
-  '3',
-  '4',
-  '3'
-),
-(
-  (SELECT id FROM users WHERE name = 'Martin'),
-  '4',
-  '5',
-  '4',
-  '1',
-  '2'
-),
-(
-  (SELECT id FROM users WHERE name = 'Mike'),
-  '5',
-  '4',
-  '3',
-  '2',
-  '4'
+  'My first blog-post!',
+  'Hello world',
+  '29122018',
+  'https://rarelyjovial.files.wordpress.com/2018/11/thumbnail_img_5813.jpg'
 );
 
 COMMIT;

@@ -34,12 +34,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-// app.post("/create-profile", (req, res) => {
+app.post("/write", (req, res) => {
 //   postData.postDataLanguages(
 //     req.body
 //   );
-//   res.redirect("/create-profile");
-// });
+  res.redirect("/write");
+});
 
 app.set("port", process.env.PORT || 1991);
 app.use(routes);

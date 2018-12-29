@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light|Nothing+You+Could+Do');
+
+
 html {
     scroll-behavior: smooth;
   }
@@ -13,7 +16,7 @@ html {
     font-size: 4rem;
     line-height: 1.4;
     background:
-      radial-gradient(transparent, rgba(0, 0, 0, 0)),
+      radial-gradient(transparent, rgba(34, 34, 34, 0.287)),
       url('../img/img_60303.jpg'),
       rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
@@ -35,13 +38,34 @@ html {
   h1 {
     font-size: 3.2em;
     line-height: 1.6;
-    margin: 1.8em 0.2em 0.2em 0.2em;
+    margin: 1.8em 0.2em 0em 0.2em;
     padding-left: 1.8em;
     text-align: center;
     color: yellow;
   }
 
+  h2 {
+    font-size: 0.7em;
+    margin: 0em 0.2em 0.2em 0.2em;
+    padding-left: 6em;
+    text-align: center;
+    font-family: 'Nothing You Could Do', cursive;
+  }
 
+  h3 {
+    margin-top: 6em;
+    margin-bottom: 0em;
+    font-size: 1em;
+    line-height: 1.6;
+    text-align: center;
+    color: yellow;
+  }
+
+  p {
+    justify-content: center;
+  }
+    
+      
   .nav-menu {
     top: 0; 
     left: 0;
@@ -104,6 +128,64 @@ html {
     transform: skew(0deg, -34deg);
   }
   
-
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding : 1rem;
+    margin: 0em 4em 4em 4em;
+    border-radius: 0.5rem;
+    background-color: white;
+    color:black;
+    font-family: 'Josefin Sans', sans-serif;
+  }
   
-    
+  .form label {
+    font-size: 1.25rem;
+    margin-bottom : 0.25rem;
+  }
+  
+  
+  .text-input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    width: 100%;
+    display: block;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid yellow;
+  }
+  .text-input:focus,
+  .text-input:active {
+    border: 3px double black;
+    background-color: rgb(240, 238, 238);
+  }
+  
+  .button-input {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    margin-top: 3rem;
+  }
+  .button-submit,
+  .button-input a {
+    align-self: flex-end;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding: 1rem;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.3s;
+    color: white;
+    background-color: rgb(17, 87, 69);
+  }
+  .button-submit:hover,
+  .button-submit:focus,
+  .button-input a:hover,
+  .button-input a:focus {
+    background-color: black;
+  }
+  
