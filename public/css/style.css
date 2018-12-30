@@ -46,7 +46,7 @@ html {
 
   h2 {
     font-size: 0.7em;
-    margin: 0em 0.2em 0.2em 0.2em;
+    margin: 0em 0.2em 1em 0.2em;
     padding-left: 6em;
     text-align: center;
     font-family: 'Nothing You Could Do', cursive;
@@ -257,53 +257,84 @@ html {
     display: block;
   }
 
- #bloggy {
-    display: flex;
+ #blogpost-list {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, auto);
+  grid-auto-flow: row;
+  grid-gap: 1em;
+  padding: 1em;
+  grid-template-areas:  
+"main main main";  
+
 } 
 
-ul {
-  list-style: none;
-  width: 100vw;
-}
 
 h5 {
   max-width: 25vw;
 	color: rgb(255, 255, 255);
-  background-color: #000000;
   text-align: center;
-  font-size: 0.8em;
+  margin: 0.3em;
+  font-size: 0.5em;
 	height: 1.4em;
 	opacity: 0.8;
 }
 
 li {
-  grid-area: main;
-  width: 25vw;
-  vertical-align: top;
+  grid-column: span 1;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.411);
+  border: none;
+  color: white;
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
 }
 
 li img {
   width: 25vw;
   max-height: 25vw;
-  column-span: 1;
+  margin: 0.5em;
 }
 
 p{
 	/* display: flex;
 	flex-wrap: wrap; */
 	padding: 0.3em;
-  font-size: 0.4em;
-  background: rgb(0, 0, 0);
+  font-size: 0.3em;
   max-width: 25vw;
   max-height: 10vw;
 	font-family: 'Josefin Sans', sans-serif;
 	/* align-content: center; */
 }
 
+#bloggy{
+  display: flex;
+  overflow: hidden;
+}
 
 .fas{
-	font-size: 1em;
+  justify-content: space-between;
+  font-size: 6em;
+  color: white;
   margin-left: 1em;
   margin-right: 1em;
-	margin-top: 4em;
+  margin-top: 4em;
+}
+
+#left {
+  background: transparent;
+  border: none;
+}
+
+#right {
+  background: transparent;
+  border: none;
 }
