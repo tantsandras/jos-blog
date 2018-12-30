@@ -46,7 +46,7 @@ html {
 
   h2 {
     font-size: 0.7em;
-    margin: 0em 0.2em 1em 0.2em;
+    margin: 0em 0.2em 1.4em 0.2em;
     padding-left: 6em;
     text-align: center;
     font-family: 'Nothing You Could Do', cursive;
@@ -103,6 +103,12 @@ html {
   }
   .about-me a:hover {
     border-bottom: 2px solid;
+  }
+
+  .about-me img {
+      width: 100%;
+      height: auto;
+      margin-top: 0.5em;
   }
   
   .burger-menu {
@@ -258,9 +264,9 @@ html {
   }
 
  #blogpost-list {
-  position: relative;
   border: 1px solid #ccc;
   border-radius: 5px;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -317,7 +323,6 @@ p{
 
 #bloggy{
   display: flex;
-  overflow: hidden;
 }
 
 .fas{
