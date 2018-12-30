@@ -84,6 +84,7 @@ html {
     bottom: 0;
     padding : 6.5rem 2rem 2rem;
     list-style: none;
+    max-width: 17vw;
     font-size: 3rem;
     line-height: 4rem;
     background-color: rgba(124, 123, 123, 0.637);
@@ -249,29 +250,20 @@ html {
     background-color: black;
   }
   
+  #login-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: block;
+  }
 
  #bloggy {
     display: flex;
 } 
 
-#blogpost-list{
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(3, 25vw);
-  grid-template-rows: repeat(2, auto);
-  grid-auto-flow: row;
-  grid-gap: 1em;
-  padding: 1em;
-  grid-template-areas: 
-"main main main" 
-"main main main";
+ul {
+  list-style: none;
+  width: 100vw;
 }
 
 h5 {
@@ -284,23 +276,16 @@ h5 {
 	opacity: 0.8;
 }
 
-
-ul {
-  list-style: none;
-  width: 100vw;
-
-}
-
 li {
   grid-area: main;
-  border-radius: 1rem;
-  max-width: 25vw;
-	margin: 1rem;
+  width: 25vw;
+  vertical-align: top;
 }
 
 li img {
   width: 25vw;
   max-height: 25vw;
+  column-span: 1;
 }
 
 p{

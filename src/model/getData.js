@@ -11,6 +11,17 @@ const getBpData = cb => {
 };
 
 
+const promiseItsJo = name => {
+  return new Promise((resolve, reject) => {
+    dbConnection.query(`SELECT * FROM users WHERE name = '${name}'`, (err, res) => {
+      if (err) reject(err);
+      else resolve(res.rows);
+    });
+  });
+}
+
+
 module.exports = {
-    getBpData
+    getBpData,
+    promiseItsJo
 }

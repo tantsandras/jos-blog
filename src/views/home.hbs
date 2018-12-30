@@ -1,5 +1,6 @@
 <main class="page-content home">
     <section class="main-section">
+        <button id="login-button" class="button-submit">login</button>
         <h1>Rarely Jovial</h1>
         <h2>So-called grown up trying to make her way through life with depression and anxiety</h2>
 
@@ -10,9 +11,9 @@
     <i class="fas fa-arrow-circle-left"></i>
         <ul class="blogpost-list">
             {{#each blogposts}}
-            <li><h5>{{header}}</h5></li>
-                <li><img src={{img_url}}></img></li>
-                <li><p>{{preview text}}</p></li>
+            <li><h5>{{header}}</h5>
+            <img src={{img_url}}></img>
+            <p>{{preview text}}</p></li>
             {{/each}}
         </ul>
         <i class="fas fa-arrow-circle-right"></i>

@@ -16,7 +16,11 @@ router.get("/", (req, res) => {
 
 
 router.get("/write", (req, res) => {
-  res.render("write"); 
+    res.render("write")
+});
+
+router.get("/sign-up", (req, res) => {
+  res.render("sign-up");
 });
 
 router.get("/login", (req, res) => {
@@ -24,7 +28,7 @@ router.get("/login", (req, res) => {
   });
 
 // error pages
-router.use(function(req, res, next){
+router.use( (req, res, next) => {
   res.status(404);
 
   if (req.accepts('html')) {
