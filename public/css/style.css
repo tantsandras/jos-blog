@@ -294,28 +294,30 @@ html {
   grid-template-areas:  
 "main main";   */
 
-
+#bloggy {
+  display: flex;
+}
 
 
 li {
-  display: inline-block;
   background-color: rgba(0, 0, 0, 0.411);
   border: none;
   color: white;
-  padding: 0.5em;
+  /* padding: 0.5em; */
   text-align: center;
   text-decoration: none;
 }
 
 li img {
-  width: 25vw;
+  max-width: 25vw;
   max-height: 25vw;
-  margin: 0.5em;
+  padding: 0.3em;
+  text-align: center;
 }
 
 p{
 	/* display: flex;
-	flex-wrap: wrap; */
+  flex-wrap: wrap; */
 	padding: 0.3em;
   font-size: 0.3em;
   max-width: 25vw;
@@ -325,9 +327,15 @@ p{
 }
 
 .blogpost-list {
-  max-width: 1000px;  
-  position: relative;  
+  display: grid;
+	grid-template-columns: 25vw 25vw;
+	grid-template-rows: 43vw;
+	grid-gap: 0.5em;
+	max-width: 80%;
+	margin: 0 3%;
+	text-align: center;
   margin: auto;  
+
 }
 
 .list-item {
@@ -357,6 +365,7 @@ h5 {
   position: absolute;  
   top: 50%;  
   width: auto;  
+  margin-top: 50%;
   padding: 0.5em;   
   color: white;  
   font-weight: bold;  
