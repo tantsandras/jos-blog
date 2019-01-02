@@ -13,15 +13,18 @@ menuBtn.addEventListener("click", e => {
       displaySlides(slide_index += n);  
   }  
   const currentSlide = (n) => {  
-      displaySlides(slide_index = n);  
+        displaySlides(slide_index = n);  
   }  
-  function displaySlides(n) {  
-      let i;  
-      let slides = document.getElementsByClassName("list-item");  
-      if (n > slides.length) { slide_index = 1 }  
-      if (n < 1) { slide_index = slides.length }  
-      for (i = 0; i < slides.length; i++) {  
-          slides[i].style.display = "none";  
-      }  
-      slides[slide_index - 1].style.display = "block";  
+  
+  function displaySlides(n) {    
+      let slides = document.getElementsByClassName("list-item"); 
+      if (n > slides.length) { 
+          slide_index = 1 }  
+      if (n < 1) { 
+          slide_index = slides.length }  
+        for (let item of slides) {
+        item.style.display = "none";
+        } 
+      slides[slide_index -1].style.display = "grid";
+      slides[slide_index +1].style.display = "grid";
   }  
