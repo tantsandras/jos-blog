@@ -8,14 +8,15 @@
     
     <section id="bloggy">
 
-    <button class="left" id="left"><i class="fas fa-angle-left"></i></button>
-        <ul class="blogpost-list">
+
+        <ul class="blogpost-list fade">
             {{#each blogposts}}
-            <li><h5>{{header}}</h5>
+            <li class="list-item"><h5>{{header}}</h5>
             <img src={{img_url}}></img>
             <p>{{preview text}}</p></li>
             {{/each}}
         </ul>
-    <button class="right" id="right"><i class="fas fa-angle-right"></i></button>
+
+           <a class="left" onclick="nextSlide(-1)">❮</a>  <a class="right" onclick="nextSlide(1)">❯</a>  
     </section>
 </main>
