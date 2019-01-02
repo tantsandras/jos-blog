@@ -9,14 +9,14 @@
     <section id="bloggy">
 
 
-        <ul class="blogpost-list fade">
+        <ul class="blogpost-list">
             {{#each blogposts}}
-            <li class="list-item"><h5>{{header}}</h5>
+            <li class="list-item fade"><h5>{{header}}</h5>
             <img src={{img_url}}></img>
             <p>{{preview text}}</p></li>
             {{/each}}
         </ul>
 
-           <a class="left" onclick="nextSlide(-1)">❮</a>  <a class="right" onclick="nextSlide(1)">❯</a>  
+           <a class="left" onclick="nextSlide(-1)">❮</a>  <a class="right" onclick="nextSlide(+1)">❯</a>  
     </section>
 </main>
