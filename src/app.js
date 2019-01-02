@@ -6,9 +6,15 @@ const routes = require("./routes/routes");
 const helpers = require("./views/helpers/index");
 const postData = require("./model/postData.js");
 const getData = require("./model/getData");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
+const { sign, verify } = require('jsonwebtoken');
+const exjwt = require('express-jwt');
+const cookieParser = require('cookie-parser');
+const secret = process.env.SECRET;
+
 
 const app = express();
+app.use(cookieParser());
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
@@ -23,6 +29,7 @@ app.engine(
   })
 );
 
+
 // load public folder
 app.use(
   express.static(path.join(__dirname, "..", "/public"), { maxAge: "30d" })
@@ -35,15 +42,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-
-app.post("/write", (req, res) => {
-postData.postDataBp(
-  req.body.header,
-  req.body.img_url,
-  req.body.text
-   );
-  res.redirect("/write");
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '/write');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
+  next();
 });
+
+
 
 
 app.post("/sign-up", (req, res) => {
@@ -71,7 +76,6 @@ app.post("/sign-up", (req, res) => {
     })
   })
 
-
 app.post("/login", (req, res) => {
   let name = req.body.name;
   let enteredPassword = req.body.password; 
@@ -81,7 +85,9 @@ app.post("/login", (req, res) => {
       console.log('this is what were getting', result[0].password)
       bcrypt.compare(enteredPassword, result[0].password, (err, response) => {
         if (response) {
-            res.redirect("/write");
+          const person = sign(result[0].id, secret);
+          let token = `jwt=${person}: HttpOnly`;
+          res.status(200).cookie('cookie', token).redirect("/write");
         } else {
           console.log("try again sugarplum")
           res.redirect("/login");
@@ -92,6 +98,19 @@ app.post("/login", (req, res) => {
       console.log("promise error", err);
     })
   });
+  
+  app.post("/write", (req, res) => {
+  postData.postDataBp(
+    req.body.header,
+    req.body.img_url,
+    req.body.text
+     );
+    res.redirect("/write");
+  });
+
+  app.post("/logout", (req, res) => {
+    req.clearCookie()
+  })
 
 app.set("port", process.env.PORT || 1991);
 app.use(routes);
