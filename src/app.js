@@ -108,9 +108,7 @@ app.post("/login", (req, res) => {
     res.redirect("/write");
   });
 
-  app.post("/logout", (req, res) => {
-    req.clearCookie()
-  })
+
 
 app.set("port", process.env.PORT || 1991);
 app.use(routes);
