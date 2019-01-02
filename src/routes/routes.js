@@ -1,6 +1,6 @@
 const express = require("express");
 const getData = require("../model/getData");
-
+const { sign, verify } = require('jsonwebtoken');
 const router = express.Router();
 
 // home route
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 });
 
 
-router.get("/write", (req, res) => {
+router.get("/write", verify, (req, res) => {
     res.render("write")
 });
 
@@ -26,6 +26,10 @@ router.get("/sign-up", (req, res) => {
 router.get("/login", (req, res) => {
     res.render("login"); 
   });
+
+router.get("/logout", (req, res) => {
+  res.render("home");
+});
 
 // error pages
 router.use( (req, res, next) => {
