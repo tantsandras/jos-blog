@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light|Nothing+You+Could+Do');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light|Nothing+You+Could+Do|Julius+Sans+One');
 
 
 html {
@@ -22,13 +22,15 @@ html {
     font-size: 4rem;
     line-height: 1.4;
     background:
-      radial-gradient(transparent, rgba(34, 34, 34, 0.226)),
-      url('../img/img_60303.jpg'),
-      rgba(0, 0, 0, 0);
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-    max-height:200vh;
+    radial-gradient(transparent, rgba(22, 37, 30, 0.425)),
+    url('../img/img_60304.jpg'), url('../img/img_60303.jpg')
+    ;
+    background-position: top, bottom;
+    background-size: contain, contain;
+    background-repeat: no-repeat, no-repeat;
+    min-width: 100vw;
+    min-height: 100vw;
+    /* max-height: 100vh; */ */
   }
 
   .hidden {
@@ -42,12 +44,14 @@ html {
   }  
   
   h1 {
-    font-size: 3.2em;
+    font-size: 2.8em;
     line-height: 1.6;
-    margin: 2.4em 0.2em 0em 0.2em;
+    margin: 2em 0.2em 0em 0.2em;
     padding-left: 1.8em;
     text-align: center;
     color: yellow;
+    font-family: 'Julius Sans One', sans-serif;
+    letter-spacing: 0.1em;
   }
 
   h2 {
@@ -65,6 +69,7 @@ html {
     line-height: 1.6;
     text-align: center;
     color: yellow;
+    font-family: 'Julius Sans One', sans-serif;
   }
 
   h4 {
@@ -74,6 +79,7 @@ html {
     line-height: 1.6;
     text-align: center;
     color: yellow;
+    font-family: 'Julius Sans One', sans-serif;
   }
   
   .nav-menu {
@@ -92,6 +98,7 @@ html {
     list-style: none;
     max-width: 17vw;
     font-size: 3rem;
+
     line-height: 4rem;
     background-color: rgba(155, 155, 155, 0.637);
     transform: translateX(-100%);
@@ -113,7 +120,7 @@ html {
  
   .about-me p {
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.4em;
     line-height: 1.4em;
     color: black;
   }
@@ -153,7 +160,7 @@ html {
     flex-direction: column;
     align-items: flex-start;
     padding : 1rem;
-    margin: 0em 6em 6em 6em;
+    margin: 0em 6em 3em 6em;
     border-radius: 0.5rem;
     background-color: white;
     color:black;
@@ -244,7 +251,7 @@ html {
   .button-submit,
   .button-input a {
     align-self: flex-end;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Julius Sans One', sans-serif;
     font-size: 1.5rem;
     letter-spacing: 0.05rem;
     padding: 1rem;
@@ -277,23 +284,6 @@ html {
     display: block;
   }
 
-
-  /* border: 1px solid #ccc;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  /* display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, auto);
-  grid-auto-flow: row;
-  grid-gap: 1em;
-  padding: 1em;
-  grid-template-areas:  
-"main main";   */
-
 #bloggy {
   display: flex;
 }
@@ -308,19 +298,59 @@ li {
   text-decoration: none;
 }
 
-li img {
-  max-width: 25vw;
-  max-height: 25vw;
-  padding: 0.3em;
-  text-align: center;
+.overlay-image {
+  position: relative;
+  max-width: 35vw;
+  max-height: 35vw;
+  padding: 0;
+  margin: 0 auto;
 }
 
-p{
-	/* display: flex;
-  flex-wrap: wrap; */
-	padding: 0.3em;
-  font-size: 0.3em;
-  max-width: 25vw;
+.hover .read-more {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 2em;
+  text-decoration: none !important;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  
+}
+
+.overlay-image img {
+  display: block;
+  max-width: 35vw;
+  max-height: 35vw;
+  padding: 0;
+  margin: 0 auto;
+  transition: .5s ease;
+}
+
+.overlay-image .hover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background: rgb(245, 245, 245);
+ }
+
+ .overlay-image:hover .hover {
+  opacity: 0.6;
+ }
+
+p {
+	padding: 0.6em;
+  font-size: 0.4em;
+  max-width: 40vw;
   max-height: 10vw;
 	font-family: 'Josefin Sans', sans-serif;
 	align-content: center;
@@ -328,11 +358,11 @@ p{
 
 .blogpost-list {
   display: grid;
-	grid-template-columns: 25vw 25vw;
-	grid-template-rows: 43vw;
+	grid-template-columns: 40vw 40vw;
+	grid-template-rows: 60vw;
 	grid-gap: 0.5em;
 	max-width: 80%;
-	margin: 0 3%;
+	margin-bottom: 1em;
 	text-align: center;
   margin: auto;  
 
@@ -351,14 +381,15 @@ p{
 
 
 h5 {
-  max-width: 25vw;
+  max-width: 40vw;
 	color: rgb(255, 255, 255);
   text-align: center;
-  margin: 0.3em;
-  font-size: 0.5em;
-	height: 1.4em;
-	opacity: 0.8;
+  padding-top: 0.8em;
+  font-size: 0.6em;
+  height: 0.1em;
+  font-family: 'Julius Sans One', sans-serif;
 }
+
 .left, .right {  
   cursor: pointer;  
   background: transparent;
@@ -378,5 +409,5 @@ h5 {
   border-radius: 0.3em 0 0 0.3em;  
 }  
 .left:hover, .right:hover {  
-      background-color: rgba(115, 115, 115, 0.8);  
+      color: yellow;  
   } 
