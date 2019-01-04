@@ -16,7 +16,7 @@ menuBtn.addEventListener("click", e => {
         displaySlides(slide_index = n);  
   }  
   
-  function displaySlides(n) {    
+    function displaySlides(n) {    
       let slides = document.getElementsByClassName("list-item"); 
       if (n > slides.length) { 
           slide_index = 1 }  
