@@ -1,6 +1,6 @@
 <main class="page-content home">
     <section class="main-section">
-        <button id="login-button" class="button-submit">login</button>
+        <button id="login-button" class="button-submit" onclick="window.location.href='/login'">login</button>
         <h1>Rarely Jovial</h1>
         <h2>So-called grown up trying to make her way through life with depression and anxiety</h2>
 
@@ -12,7 +12,7 @@
         <ul class="blogpost-list">
             {{#each blogposts}}
             <li class="list-item fade"><h5>{{header}}</h5>
-            <img src={{img_url}}></img>
+            <article class="overlay-image"><img src={{img_url}} alt="Blog-post thumbnail"><div class="hover"><a class="link--read-more" href="#" title="read more"><h5 class="read-more">read more</h5></div></a></article>
             <p>{{preview text}}</p></li>
             {{/each}}
         </ul>
