@@ -8,11 +8,10 @@
     
     <section id="bloggy">
 
-
         <ul class="blogpost-list">
             {{#each blogposts}}
             <li class="list-item fade"><h5>{{header}}</h5>
-            <article class="overlay-image"><img src={{img_url}} alt="Blog-post thumbnail"><div class="hover"><a class="link--read-more" href="#" title="read more"><h5 class="read-more">read more</h5></div></a></article>
+            <div class="overlay-image"><img src={{img_url}} alt="Blog-post thumbnail"><div class="hover"><a class="link--read-more" href="/posts/{{id}}" title="read more"><h5 class="read-more">read more</h5></div></a></div>
             <p>{{preview text}}</p></li>
             {{/each}}
         </ul>

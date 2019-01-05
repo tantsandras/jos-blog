@@ -42,14 +42,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '/write');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-type: Authorization');
-  next();
-});
-
-
-
 
 app.post("/sign-up", (req, res) => {
   let name = req.body.name;
@@ -99,11 +91,15 @@ app.post("/login", (req, res) => {
     })
   });
   
+  const date = new Date().toDateString();
+  console.log(date)
+
   app.post("/write", (req, res) => {
   postData.postDataBp(
     req.body.header,
     req.body.img_url,
-    req.body.text
+    req.body.text,
+    date
      );
     res.redirect("/write");
   });
