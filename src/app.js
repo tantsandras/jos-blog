@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '/write');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-type: Authorization');
   next();
 });
 
