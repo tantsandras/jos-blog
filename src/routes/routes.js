@@ -2,6 +2,9 @@ const express = require("express");
 const getData = require("../model/getData");
 const { sign, verify } = require('jsonwebtoken');
 const router = express.Router();
+const exjwt = require('express-jwt');
+const secret = process.env.SECRET;
+
 
 // home route
 router.get("/", (req, res) => {
@@ -29,9 +32,13 @@ router.get("/posts/:id", (req, res) => {
   res.render("posts")
 });
 
-router.get("/write", verify, (req, res) => {
+ router.get("/write", (req, res) => {
+   if (req.cookies['cookie']) {
     res.render("write")
-});
+   } else {
+    res.redirect('/login');
+   }
+ });
 
 router.get("/sign-up", (req, res) => {
   res.render("sign-up");
