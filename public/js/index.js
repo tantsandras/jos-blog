@@ -7,6 +7,11 @@ menuBtn.addEventListener("click", e => {
   document.querySelector(".about-me").classList.toggle("open");
 });  
 
+bkLib.onDomLoaded(function()
+{
+new nicEditor({buttonList : ['fontSize','bold','italic','underline','left','center','right','justify','ol','ul','strikeThrough','removeformat','subscript','superscript','html','outdent','indent','link','unlink']}).panelInstance('NicEdit');
+});
+
 
 
 
