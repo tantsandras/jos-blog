@@ -411,3 +411,36 @@ h5 {
 .left:hover, .right:hover {  
       color: yellow;  
   } 
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.356);
+    margin: 4em 4em 0em 4em;
+    height: auto;
+  }
+
+  #read-post-img {
+    align-content: center;
+    margin: 0 auto;
+    max-width: 50%;
+  }
+
+  .read-post {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+
+  .date {
+    margin: 0 auto;
+    max-width: 50%;
+    font-size: 0.6em;
+    padding-top: 1em;
+    padding-bottom: 0;
+    font-family: 'Julius Sans One', sans-serif;
+  }
+
+  .post-title {
+    margin-top: 2em;
+  }
