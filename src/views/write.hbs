@@ -3,14 +3,14 @@
         <button id="logout-button" class="button-submit" onclick="window.location.href='/logout'">logout</button>
         <h4>What's on your mind?</h4>
         <form action="/write" method="POST" class="form" id="blogpost">
-        <label for ="title">title</label>
+        <label for ="Title">Title</label>
         <input id="header" class="text-input" type="text" name="header" value=""
-                autocomplete="off" pattern="[a-zA-Z'\s]{3,40}">
-            <label for ="image-url">image url</label> 
+                autocomplete="off" pattern="^[a-zA-Z0-9!?@#&()\-.+,/\"]*${3,40}">
+            <label for ="image-url">Image url</label> 
             <input pattern="^[^<>]+$" name='img_url' type='url' placeholder="https://example.com/images/img.jpg" src="" pattern="https://.*.jpg" id="image-url" placeholder="Paste image link here">
-            <label for ="content">content</label>
-            <textarea id="text-content" class="text-input" type="text" name="text" value="" 
-                autocomplete="off" pattern="[a-zA-Z',\s]{3,1000}" rows="30" cols="14"> </textarea>
+            <label for ="content">Content</label>
+            <textarea id="NicEdit" class="text-input" type="text" name="text" value="" 
+                autocomplete="off" pattern="[a-zA-Z',\s]{3,3000}" rows="50" cols="14"> </textarea>
           
         <button type="submit" class="button-submit">Publish</button>
         </form>

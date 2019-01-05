@@ -13,7 +13,7 @@ CREATE TABLE blogposts (
   header TEXT NOT NULL,
   img_url VARCHAR(500),
   text TEXT NOT NULL,
-  date INTEGER
+  date TEXT
 );
 
 CREATE TABLE comments (
@@ -29,13 +29,5 @@ INSERT INTO users (name, password) VALUES
   'password'
 );
 
-
-INSERT INTO blogposts (header, img_url, text, date) VALUES
-(
-  'My first blog-post!',
-  'https://rarelyjovial.files.wordpress.com/2018/11/thumbnail_img_5813.jpg',
-  'Hello world',
-  '29122018'
-);
 
 COMMIT;

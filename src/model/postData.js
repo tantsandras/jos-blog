@@ -11,6 +11,7 @@ const hashPassword = (password, cb) => {
     });
   };
 
+  
 
 const postDataBp = (header, img_url, text, date) => {
     databaseConnection.query(
