@@ -14,6 +14,20 @@ router.get("/", (req, res) => {
   });
 });
 
+router.get('/bps', (req, res) => {
+  getData.getBpData((err, bpData) => {
+    if (err) {
+      res.statusCode = 500;
+      res.send("Error");
+    }
+    res.json(bpData)
+  });
+});
+
+
+router.get("/posts/:id", (req, res) => {
+  res.render("posts")
+});
 
 router.get("/write", verify, (req, res) => {
     res.render("write")
@@ -28,8 +42,14 @@ router.get("/login", (req, res) => {
   });
 
 router.get("/logout", (req, res) => {
+  getData.getBpData((err, bpData) => {
+    if (err) {
+      res.statusCode = 500;
+      res.send("Error");
+    }
   res.clearCookie("cookie");
-  res.render("home");
+  res.render("home", {blogposts: bpData} );
+  });
 });
 
 // error pages
