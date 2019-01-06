@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light|Lato|Nothing+You+Could+Do|Julius+Sans+One');
 
 
+/* ---------------------general stuff-------------------- */
 html {
     scroll-behavior: smooth;
   }
@@ -9,12 +10,7 @@ html {
     box-sizing: border-box;
   }
   
-  
-  .about-me img {
-    width: 100%;
-    height: auto;
-    margin-top: 0.5em;
-}
+
 
   body {
     color: rgb(0, 0, 0);
@@ -30,7 +26,6 @@ html {
     background-repeat: no-repeat, no-repeat;
     min-width: 100vw;
     min-height: 100vw;
-    /* max-height: 100vh; */ */
   }
 
   .hidden {
@@ -82,7 +77,8 @@ html {
     color: yellow;
     font-family: 'Julius Sans One', sans-serif;
   }
-  
+
+  /* ----------------------------------menu-------------------------------- */
   .nav-menu {
     top: 0; 
     left: 0;
@@ -90,6 +86,13 @@ html {
     max-width: 20rem;
     z-index: 1;
   }
+
+    
+  .about-me img {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5em;
+}
   
   .about-me {
     position: fixed;
@@ -109,7 +112,7 @@ html {
     transform: translateX(0);
     z-index: 1;
     height: 100%;
-    max-width: 17vw;
+    max-width: 18vw;
   }
   .about-me a {
     color: white;
@@ -156,6 +159,7 @@ html {
     transform: skew(0deg, -34deg);
   }
   
+  /* -------------------------------------write blog post page---------------------------- */
   #blogpost {
     display: flex;
     flex-direction: column;
@@ -189,6 +193,7 @@ html {
     height: 30em;
   }
   
+  /* ---------------------------------------login page--------------------------------- */
   #login-form {
     display: flex;
     flex-direction: column;
@@ -226,6 +231,8 @@ html {
     border-radius: 0.5rem;
     border: 2px solid yellow;
   }
+
+  /* ------------------------------general button styles------------------------- */
   
   .text-input {
     font-family: 'Lato', sans-serif;
@@ -285,6 +292,8 @@ html {
     display: block;
   }
 
+/* --------------------------------blog post slideshow------------------- */
+
 #bloggy {
   display: flex;
 }
@@ -312,7 +321,7 @@ li {
   font-size: 2em;
   text-decoration: none !important;
   position: absolute;
-  top: 20%;
+  top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -392,6 +401,8 @@ h5 {
   font-family: 'Julius Sans One', sans-serif;
 }
 
+/* 
+---------------------------nav arrows--------------------------- */
 .left, .right {  
   cursor: pointer;  
   background: transparent;
@@ -414,6 +425,7 @@ h5 {
       color: yellow;  
   } 
 
+  /* ------------------------------read post page---------------------------- */
   .post {
     display: flex;
     flex-direction: column;
