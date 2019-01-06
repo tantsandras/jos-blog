@@ -2,8 +2,6 @@ const express = require("express");
 const getData = require("../model/getData");
 const { sign, verify } = require('jsonwebtoken');
 const router = express.Router();
-const exjwt = require('express-jwt');
-const secret = process.env.SECRET;
 
 
 // home route
@@ -55,7 +53,7 @@ router.get("/logout", (req, res) => {
       res.send("Error");
     }
   res.clearCookie("cookie");
-  res.render("home", {blogposts: bpData} );
+  res.redirect("/")
   });
 });
 
