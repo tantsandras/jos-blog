@@ -10,9 +10,8 @@ const bcrypt = require("bcryptjs");
 const { sign, verify } = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 const cookieParser = require('cookie-parser');
-const request = require('request');
 const secret = process.env.SECRET;
-const igToken = process.env.IGTOKEN;
+
 
 const app = express();
 app.use(cookieParser());
@@ -75,7 +74,6 @@ app.post("/login", (req, res) => {
 
   getData.promiseItsJo(name) 
     .then((result) => {
-      console.log('this is what were getting', result[0].password)
       bcrypt.compare(enteredPassword, result[0].password, (err, response) => {
         if (response) {
           const person = sign(result[0].id, secret);
@@ -105,25 +103,7 @@ app.post("/login", (req, res) => {
     res.redirect("/write");
   });
 
-const url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + `${igToken}`;
-request(url, { json: true }, (err, res, body) => {
-  if (err) { 
-    return reply({ message: 'Failure.', error }).code(res.statusCode);
-  } else {
-      let list = [];
-      body.data.forEach(images => {
-          list.push(images);
-      });
-      let data = list.map(post => {
-        return {
-        thumbnail : post.images.thumbnail.url,
-        caption : post.caption.text
-        };
-       });
-       console.log(data);
-       return data;
-    }
-});
+
 
 
 app.set("port", process.env.PORT || 1991);

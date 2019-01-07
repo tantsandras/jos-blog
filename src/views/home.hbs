@@ -18,4 +18,13 @@
 
            <a class="left" onclick="nextSlide(-1)">❮</a>  <a class="right" onclick="nextSlide(+1)">❯</a>  
     </section>
+        
+           <h6>Follow me on instagram why don't ya!</h6>
+    <article class="thumbnail">
+        <div class="insta-grid">
+        {{#each insta}}
+        <img class="instaFeed" src={{thumbnail}} alt="Instagram thumbnail" style="width:100%">
+        {{/each}}
+        </div>
+        </article>
 </main>

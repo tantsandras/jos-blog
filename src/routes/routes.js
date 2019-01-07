@@ -1,8 +1,31 @@
 const express = require("express");
 const getData = require("../model/getData");
+const request = require('request');
 const { sign, verify } = require('jsonwebtoken');
+const igToken = process.env.IGTOKEN;
 const router = express.Router();
 
+const url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + `${igToken}`;
+
+const apiRes = cb => {
+  request(url, { json: true }, (err, res, body) => {
+  if (err) { 
+    return cb(err);
+  } else {
+      let list = [];
+      body.data.forEach(images => {
+          list.push(images);
+      });
+      let instaData = list.map(post => {
+        return {
+          thumbnail : post.images.thumbnail.url,
+          };
+       });
+       return cb(null, instaData);
+      }
+
+  });
+}
 
 // home route
 router.get("/", (req, res) => {
@@ -11,7 +34,13 @@ router.get("/", (req, res) => {
       res.statusCode = 500;
       res.send("Error");
     }
-  res.render("home", {blogposts: bpData} ); 
+    apiRes((err, instaData) => {
+      if (err) {
+        res.statusCode = 500;
+        res.send("Error");
+      }
+  res.render("home", {blogposts: bpData, insta: instaData}); 
+    });
   });
 });
 

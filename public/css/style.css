@@ -86,23 +86,21 @@ html {
     max-width: 20rem;
     z-index: 1;
   }
-
     
   .about-me img {
-    width: 100%;
+    max-width: 14vw;
     height: auto;
     margin-top: 0.5em;
 }
   
   .about-me {
-    position: fixed;
+    position: fixed; 
     top: 0;
     bottom: 0;
     padding : 6.5rem 2rem 2rem;
     list-style: none;
     max-width: 17vw;
     font-size: 3rem;
-
     line-height: 4rem;
     background-color: rgba(155, 155, 155, 0.637);
     transform: translateX(-100%);
@@ -114,14 +112,7 @@ html {
     height: 100%;
     max-width: 18vw;
   }
-  .about-me a {
-    color: white;
-    text-align: center;
-  }
-  .about-me a:hover {
-    border-bottom: 2px solid;
-  }
- 
+
   .about-me p {
     text-align: center;
     font-size: 0.4em;
@@ -256,6 +247,7 @@ html {
     background: transparent;
     margin-top: 3rem;
   }
+
   .button-submit,
   .button-input a {
     align-self: flex-end;
@@ -269,8 +261,9 @@ html {
     cursor: pointer;
     transition: background-color ease-in-out 0.3s;
     color: white;
-    background-color: rgb(17, 87, 69);
+    background-color: rgb(76, 105, 80);
   }
+  
   .button-submit:hover,
   .button-submit:focus,
   .button-input a:hover,
@@ -288,7 +281,21 @@ html {
   #logout-button {
     position: absolute;
     top: 2rem;
-    right: 2rem;
+    left: 2rem;
+    display: block;
+  }
+
+  #server-err {
+    position: absolute;
+    top: 8em;
+    right: 30em;
+    display: block;
+  }
+
+  #not-found {
+    position: absolute;
+    top: 8em;
+    right: 30em;
     display: block;
   }
 
@@ -467,4 +474,118 @@ h5 {
     margin: 0 auto;
     max-width: 80%;
   }
+
+
+  /* ------------------------instagram carousel-------------- */
+  .thumbnail {
+    display: flex;
+  }
+
+  .insta-grid {
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw;
+    grid-template-rows: 10vw;
+    grid-gap: 0.5em;
+    margin-bottom: 1em;
+    background-color: rgba(0, 0, 0, 0.411);
+    border: none;
+    text-align: center;
+    padding: 1em 1em 1em 1em;
+    margin-left: 8.5em;
+    margin-right: auto;
+  }
+  
+  h6 {
+    text-align: center;
+    font-size: 0.6em;
+    font-family: 'Nothing You Could Do', cursive;
+    color: yellow;
+    padding-top: 1.5em;
+    padding-bottom: 0.4em;
+            
+  }
+
+  .instaFeed {
+    display: none;
+  }
+
+  /* ----------------------media queries------------------ */
+
+  /* @media screen and (min-width:300px) {
+    .thumbnail {
+      width: 33.333333333333336%;
+    }
+  }
+  
+  @media screen and (min-width:450px) {
+    .thumbnail {
+      width: 25%;
+    }
+  } */
+  
+  @media only screen and (max-width:60vw) {
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.6;
+    margin: 1em 0.2em 0em 0.2em;
+    padding-left: 1.8em;
+    text-align: center;
+    color: yellow;
+    font-family: 'Julius Sans One', sans-serif;
+    letter-spacing: 0.1em;
+  }
+  .left, .right {  
+    cursor: pointer;  
+    background: transparent;
+    position: absolute;  
+    top: 40%;  
+    width: auto;  
+    margin-top: 40%;
+    padding: 0.5em;   
+    color: white;  
+    font-weight: bold;  
+    font-size: 1em;  
+    transition: 0.6s ease;  
+    border-radius: 0 0.3em 0.3em 0;  
+  }  
+
+
+h5 {
+  max-width: 40vw;
+	color: rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 0.6em;
+  font-size: 0.5em;
+  height: auto;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.hover .read-more {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 1.6em;
+  text-decoration: none !important;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+  
+}
+
+#preview {
+	padding: 0.6em;
+  font-size: 0.3em;
+  max-width: 40vw;
+  max-height: 10vw;
+	font-family: 'Lato', sans-serif;
+  align-content: center;
+  color: white;
+}
+
+  }
+  
 

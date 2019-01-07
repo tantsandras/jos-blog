@@ -69,3 +69,22 @@ html(bp);
   }  
  
 
+  let slideIndex = 0;  
+
+
+  const carousel = () => {
+    let x = document.getElementsByClassName("instaFeed");
+    for (let item of x) {
+      item.style.display = "none";
+     } 
+    slideIndex++;
+    if (slideIndex > x.length) {
+      slideIndex = 1
+    } 
+    x[slideIndex-1].style.display = "grid"; 
+    x[slideIndex+1].style.display = "grid"; 
+    x[slideIndex].style.display = "grid"; 
+    setTimeout(carousel, 6000);
+  }
+
+  carousel(); 
