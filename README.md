@@ -4,14 +4,15 @@ Jo's blog was built for Jo, because we found out that you had to pay to be able 
 
 ## Live at : https://jos-blog.herokuapp.com/
 
-## To run the blog:
+##  :computer: To run the blog locally:
 - clone repository 
 - cd into repository 
+- type npm i 
 - type npm run dev in terminal 
 - go to localhost:1991
 
 
-## Tech stack used:
+## :outbox_tray: Tech stack used:
 - JavaScript
 - Express 
 - Handlebars
@@ -20,9 +21,11 @@ Jo's blog was built for Jo, because we found out that you had to pay to be able 
 - bcrypt
 - JWT 
 
-## Stretch Goals 
+## :soon: Stretch Goals 
 - Add list of existing blogposts when Jo is logged in so that she can delete a blogpost if she wants 
 - Make like button
 - Make comment functionality
+- Make the design more responsive 
+- Fix the 'read more' page
 
-## Thanks for reading!
+## :star: Thanks for reading!
